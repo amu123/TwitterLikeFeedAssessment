@@ -35,7 +35,11 @@ public class ProcessTweetsImpl implements ProcessTweets {
             final String user = values[0];
             final String message = values[1];
 
-            Tweet tweet = new Tweet(user, message);
+            Tweet tweet = Tweet.builder()
+                    .user(user)
+                    .message(message)
+                    .build();
+            
             tweets.add(tweet);
         }
 

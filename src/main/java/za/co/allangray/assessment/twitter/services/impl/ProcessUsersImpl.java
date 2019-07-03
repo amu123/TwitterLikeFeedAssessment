@@ -49,9 +49,10 @@ public class ProcessUsersImpl implements ProcessUsers {
                 User acc;
 
                 if(!tmpAccs.containsKey(user)) {
-                    acc = new User();
-                    acc.setName(user);
-                    acc.setFollowers(new HashSet<String>());
+                    acc = User.builder()
+                            .name(user)
+                            .followers(new HashSet<String>())
+                            .build();
 
                     tmpAccs.put(user, acc);
                 } else {
@@ -59,19 +60,23 @@ public class ProcessUsersImpl implements ProcessUsers {
                 }
 
                 Set<String> followers = acc.getFollowers();
-                for(String currentFollower : rawFollowers) {
+
+                List<String> rawFollowersList = Arrays.asList(rawFollowers);
+                rawFollowersList.forEach(currentFollower -> {
                     String follower = currentFollower.trim();
                     followers.add(follower);
 
                     User followerAcc;
                     if(!tmpAccs.containsKey(follower)) {
-                        followerAcc = new User();
-                        followerAcc.setName(follower);
-                        followerAcc.setFollowers(new HashSet<String>());
+                        followerAcc = User.builder()
+                                .name(follower)
+                                .followers(new HashSet<String>())
+                                .build();
 
                         tmpAccs.put(follower, followerAcc);
                     }
-                }
+                });
+
             }
 
 

@@ -1,27 +1,16 @@
 package za.co.allangray.assessment.twitter.model;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.Set;
 
+@Builder
+@Data
 public class User implements Comparable<User> {
 
     private String name;
     private Set<String> followers;
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<String> getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(Set<String> followers) {
-        this.followers = followers;
-    }
 
   public int compareTo(User user) {
         return name.compareToIgnoreCase(user.name);
