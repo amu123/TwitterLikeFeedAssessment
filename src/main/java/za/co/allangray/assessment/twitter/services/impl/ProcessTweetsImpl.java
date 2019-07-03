@@ -1,26 +1,24 @@
-package za.co.allangray.assessment.twitter.services.Impl;
+package za.co.allangray.assessment.twitter.services.impl;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import org.apache.log4j.Logger;
-import za.co.allangray.assessment.twitter.main.Constants;
+import za.co.allangray.assessment.twitter.utility.Constants;
 import za.co.allangray.assessment.twitter.model.Tweet;
 import za.co.allangray.assessment.twitter.services.ProcessTweets;
 import za.co.allangray.assessment.twitter.utility.FileUtils;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+
+import static za.co.allangray.assessment.twitter.utility.Constants.*;
 
 public class ProcessTweetsImpl implements ProcessTweets {
 
     private static final Logger LOG = Logger.getLogger(ProcessTweets.class);
 
-    private static final String SEPARATOR = "> ";
-
 
     public List<Tweet> process() throws IOException {
-        List<Tweet> tweets = new ArrayList<Tweet>(400);
+        List<Tweet> tweets = new ArrayList<>();
 
         FileUtils utils = new FileUtils();
         File tweetsFile = utils.getFileFromResources(Constants.TWEET_FILE);
@@ -28,7 +26,7 @@ public class ProcessTweetsImpl implements ProcessTweets {
         FileReader reader = new FileReader(tweetsFile);
         BufferedReader bufferedReader = new BufferedReader(reader);
 
-        LOG.info("Starting to process tweet file: {}" + tweetsFile.getPath());
+        LOG.info(STARTING_TO_PROCESS_TWEET_FILE + tweetsFile.getPath());
 
 
         String line;
@@ -41,7 +39,7 @@ public class ProcessTweetsImpl implements ProcessTweets {
             tweets.add(tweet);
         }
 
-        LOG.info("Completed processing tweet file.");
+        LOG.info(COMPLETED_PROCESSING_TWEET_FILE);
 
         bufferedReader.close();
 

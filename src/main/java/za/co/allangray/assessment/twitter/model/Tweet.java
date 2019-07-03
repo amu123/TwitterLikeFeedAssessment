@@ -2,16 +2,16 @@ package za.co.allangray.assessment.twitter.model;
 
 public class Tweet {
 
-    private final String owner;
+    private final String user;
     private final String message;
 
-    public Tweet(String owner, String message) {
-        this.owner = owner;
+    public Tweet(String user, String message) {
+        this.user = user;
         this.message = message;
     }
 
-    public String getOwner() {
-        return owner;
+    public String getUser() {
+        return user;
     }
 
     public String getMessage() {

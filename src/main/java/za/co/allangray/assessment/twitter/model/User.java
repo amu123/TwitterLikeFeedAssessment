@@ -2,14 +2,11 @@ package za.co.allangray.assessment.twitter.model;
 
 import java.util.Set;
 
-public class TwitterAccount implements Comparable<TwitterAccount> {
+public class User implements Comparable<User> {
 
     private String name;
     private Set<String> followers;
-
-    public TwitterAccount() {
-    }
-
+    
     public String getName() {
         return name;
     }
@@ -26,11 +23,8 @@ public class TwitterAccount implements Comparable<TwitterAccount> {
         this.followers = followers;
     }
 
-  public int compareTo(TwitterAccount comparison) {
-        return name.compareToIgnoreCase(comparison.name);
+  public int compareTo(User user) {
+        return name.compareToIgnoreCase(user.name);
    }
 
-    public int compareTo(String comparison) {
-        return name.compareToIgnoreCase(comparison);
-    }
 }
