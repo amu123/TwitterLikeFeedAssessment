@@ -15,7 +15,7 @@ public class ProcessUsersImpl implements ProcessUsers {
 
     private static final Logger LOG = Logger.getLogger(ProcessUsers.class);
 
-    public Set<User> process() throws IOException {
+    public Set<User> processUsers() throws IOException {
         Map<String, User> tmpAccs = new HashMap<String, User>();
 
         FileUtils utils = new FileUtils();

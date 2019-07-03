@@ -1,0 +1,26 @@
+## Ignore the build folder
+target/
+log/
+
+## Ignore any artifacts
+*.jar
+*.ear
+*.war
+
+## Eclipse project files
+.settings/
+.classpath
+.project
+
+## IntelliJ project files
+*.iml
+.idea
+
+## Mac Files
+.DS_Store
+
+## Pom Version Backup
+pom.xml.versionsBackup​
+
+## sonar
+.sonar

@@ -17,7 +17,7 @@ public class ProcessTweetsImpl implements ProcessTweets {
     private static final Logger LOG = Logger.getLogger(ProcessTweets.class);
 
 
-    public List<Tweet> process() throws IOException {
+    public List<Tweet> processTweets() throws IOException {
         List<Tweet> tweets = new ArrayList<>();
 
         FileUtils utils = new FileUtils();
@@ -39,7 +39,7 @@ public class ProcessTweetsImpl implements ProcessTweets {
                     .user(user)
                     .message(message)
                     .build();
-            
+
             tweets.add(tweet);
         }
 

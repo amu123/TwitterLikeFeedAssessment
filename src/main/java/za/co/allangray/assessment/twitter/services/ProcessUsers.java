@@ -6,5 +6,5 @@ import java.io.IOException;
 import java.util.Set;
 
 public interface ProcessUsers {
-    Set<User> process() throws IOException;
+    Set<User> processUsers() throws IOException;
 }

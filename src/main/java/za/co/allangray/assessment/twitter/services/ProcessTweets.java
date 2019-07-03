@@ -7,5 +7,5 @@ import java.io.IOException;
 import java.util.List;
 
 public interface ProcessTweets {
-    List<Tweet> process() throws IOException;
+    List<Tweet> processTweets() throws IOException;
 }

@@ -34,7 +34,7 @@ public class TwitterLikeFeed {
         try {
 
             ProcessUsers processUsers = new ProcessUsersImpl();
-            users = processUsers.process();
+            users = processUsers.processUsers();
 
             users.forEach(currentUser -> {
 
@@ -55,7 +55,7 @@ public class TwitterLikeFeed {
         try {
             ProcessTweets processTweets = new ProcessTweetsImpl();
 
-            tweets = processTweets.process();
+            tweets = processTweets.processTweets();
 
             tweets.forEach(currentTweet -> {
                 if(currentUser.getName().equals(currentTweet.getUser())
