@@ -1,5 +1,7 @@
 ## Ignore the build folder
 target/
+
+## Ignore the Log folder
 log/
 
 ## Ignore any artifacts
