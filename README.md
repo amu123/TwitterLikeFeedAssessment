@@ -41,3 +41,10 @@ Ward
 
 # Solution
 
+# How to run
+
+This is a maven project, so you need to have java and maven install on your machine.
+
+run maven install to install dependencies.
+in the project, run TwitterLikeFeed class.
+
