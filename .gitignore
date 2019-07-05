@@ -4,8 +4,6 @@ log/
 
 ## Ignore any artifacts
 *.jar
-*.ear
-*.war
 
 ## Eclipse project files
 .settings/
